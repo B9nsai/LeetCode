@@ -26,9 +26,6 @@ public class Main {
                 count++;
             }
         }
-
         return array;
     }
-
-
 }
