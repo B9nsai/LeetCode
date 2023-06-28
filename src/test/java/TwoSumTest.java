@@ -15,9 +15,11 @@ public class TwoSumTest {
         int target = 9;
 
         int[] actual = twoSum.twoSum(nums, target);
-
         int[] expected = {0, 1};
-        Assertions.assertEquals(expected, actual);
+
+        for (int i = 0; i < 2; i++) {
+            Assertions.assertEquals(expected[i], actual[i]);
+        }
     }
 
     @Test
@@ -26,8 +28,10 @@ public class TwoSumTest {
         int target = 6;
 
         int[] actual = twoSum.twoSum(nums, target);
-
         int[] expected = {0, 1};
-        Assertions.assertEquals(expected, actual);
+
+        for (int i = 0; i < 2; i++) {
+            Assertions.assertEquals(expected[i], actual[i]);
+        }
     }
 }
