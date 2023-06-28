@@ -19,4 +19,15 @@ public class TwoSumTest {
         int[] expected = {0, 1};
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldNotUseTheSameElementTwice() {
+        int[] nums = {3, 3};
+        int target = 6;
+
+        int[] actual = twoSum.twoSum(nums, target);
+
+        int[] expected = {0, 1};
+        Assertions.assertEquals(expected, actual);
+    }
 }
