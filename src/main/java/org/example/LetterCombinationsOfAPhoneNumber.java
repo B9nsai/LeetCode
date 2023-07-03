@@ -17,39 +17,31 @@ import java.util.*;
  * </ul>
  */
 public class LetterCombinationsOfAPhoneNumber {
+    private Map<Character, List<Character>> phoneButtonMap;
     public List<String> letterCombinations(String digits) {
-        Map<Character, List<Character>> phoneButtonMap = createPhoneButtonMap();
+        createPhoneButtonMap();
 
         return new ArrayList<>();
     }
 
-    private Map<Character, List<Character>> createPhoneButtonMap() {
-        Map<Character, List<Character>> phoneButtonMap = new HashMap<>();
+    private List<String> appendLetterFromButton(List<String> letterList, Character nextDigit) {
+        List<String> appendedLetterList = new ArrayList<>();
+        for (String letters : letterList) {
+            for (Character letter : phoneButtonMap.get(nextDigit)) {
+                appendedLetterList.add(letters + letter);
+            }
+        }
+        return appendedLetterList;
+    }
 
-        // Number 2
+    private void createPhoneButtonMap() {
         phoneButtonMap.put('2', Arrays.asList('A', 'B', 'C'));
-
-        // Number 3
         phoneButtonMap.put('3', Arrays.asList('D', 'E', 'F'));
-
-        // Number 4
         phoneButtonMap.put('4', Arrays.asList('G', 'H', 'I'));
-
-        // Number 5
         phoneButtonMap.put('5', Arrays.asList('J', 'K', 'L'));
-
-        // Number 6
         phoneButtonMap.put('6', Arrays.asList('M', 'N', 'O'));
-
-        // Number 7
         phoneButtonMap.put('7', Arrays.asList('P', 'Q', 'R', 'S'));
-
-        // Number 8
         phoneButtonMap.put('8', Arrays.asList('T', 'U', 'V'));
-
-        // Number 9
         phoneButtonMap.put('9', Arrays.asList('W', 'X', 'Y', 'Z'));
-
-        return phoneButtonMap;
     }
 }
