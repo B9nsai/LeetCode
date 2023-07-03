@@ -35,13 +35,13 @@ public class LetterCombinationsOfAPhoneNumber {
     }
 
     private void createPhoneButtonMap() {
-        phoneButtonMap.put('2', Arrays.asList('A', 'B', 'C'));
-        phoneButtonMap.put('3', Arrays.asList('D', 'E', 'F'));
-        phoneButtonMap.put('4', Arrays.asList('G', 'H', 'I'));
-        phoneButtonMap.put('5', Arrays.asList('J', 'K', 'L'));
-        phoneButtonMap.put('6', Arrays.asList('M', 'N', 'O'));
-        phoneButtonMap.put('7', Arrays.asList('P', 'Q', 'R', 'S'));
-        phoneButtonMap.put('8', Arrays.asList('T', 'U', 'V'));
-        phoneButtonMap.put('9', Arrays.asList('W', 'X', 'Y', 'Z'));
+        phoneButtonMap.put('2', Arrays.asList('a', 'b', 'c'));
+        phoneButtonMap.put('3', Arrays.asList('d', 'e', 'f'));
+        phoneButtonMap.put('4', Arrays.asList('g', 'h', 'i'));
+        phoneButtonMap.put('5', Arrays.asList('j', 'k', 'l'));
+        phoneButtonMap.put('6', Arrays.asList('m', 'n', 'o'));
+        phoneButtonMap.put('7', Arrays.asList('p', 'q', 'r', 's'));
+        phoneButtonMap.put('8', Arrays.asList('t', 'u', 'v'));
+        phoneButtonMap.put('9', Arrays.asList('w', 'x', 'y', 'z'));
     }
 }
