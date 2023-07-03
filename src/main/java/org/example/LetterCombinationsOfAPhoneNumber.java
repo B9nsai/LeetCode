@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -21,7 +22,15 @@ public class LetterCombinationsOfAPhoneNumber {
     public List<String> letterCombinations(String digits) {
         createPhoneButtonMap();
 
-        return new ArrayList<>();
+
+        List<Character> digitList = stringToCharList(digits);
+        List<String> letterCombinations = new ArrayList<>();
+
+        for (char digit : digitList) {
+            letterCombinations = appendLetterFromButton(letterCombinations, digit);
+        }
+
+        return letterCombinations;
     }
 
     private List<String> appendLetterFromButton(List<String> letterList, Character nextDigit) {
@@ -35,6 +44,8 @@ public class LetterCombinationsOfAPhoneNumber {
     }
 
     private void createPhoneButtonMap() {
+        phoneButtonMap = new HashMap<>();
+
         phoneButtonMap.put('2', Arrays.asList('a', 'b', 'c'));
         phoneButtonMap.put('3', Arrays.asList('d', 'e', 'f'));
         phoneButtonMap.put('4', Arrays.asList('g', 'h', 'i'));
@@ -43,5 +54,9 @@ public class LetterCombinationsOfAPhoneNumber {
         phoneButtonMap.put('7', Arrays.asList('p', 'q', 'r', 's'));
         phoneButtonMap.put('8', Arrays.asList('t', 'u', 'v'));
         phoneButtonMap.put('9', Arrays.asList('w', 'x', 'y', 'z'));
+    }
+
+    private List<Character> stringToCharList(String string) {
+        return string.chars().mapToObj(e->(char)e).collect(Collectors.toList());
     }
 }
