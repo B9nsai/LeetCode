@@ -22,7 +22,6 @@ public class LetterCombinationsOfAPhoneNumber {
     public List<String> letterCombinations(String digits) {
         createPhoneButtonMap();
 
-
         List<Character> digitList = stringToCharList(digits);
         List<String> letterCombinations = new ArrayList<>();
 
@@ -35,6 +34,12 @@ public class LetterCombinationsOfAPhoneNumber {
 
     private List<String> appendLetterFromButton(List<String> letterList, Character nextDigit) {
         List<String> appendedLetterList = new ArrayList<>();
+        if (letterList.size() == 0) {
+            for (Character letter : phoneButtonMap.get(nextDigit)) {
+                appendedLetterList.add(String.valueOf(letter));
+            }
+            return appendedLetterList;
+        }
         for (String letters : letterList) {
             for (Character letter : phoneButtonMap.get(nextDigit)) {
                 appendedLetterList.add(letters + letter);
