@@ -23,7 +23,7 @@ public class LetterCombinationsOfAPhoneNumber {
         return new ArrayList<>();
     }
 
-    private static Map<Character, List<Character>> createPhoneButtonMap() {
+    private Map<Character, List<Character>> createPhoneButtonMap() {
         Map<Character, List<Character>> phoneButtonMap = new HashMap<>();
 
         // Number 2
