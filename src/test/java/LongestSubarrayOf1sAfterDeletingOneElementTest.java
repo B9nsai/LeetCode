@@ -32,6 +32,15 @@ public class LongestSubarrayOf1sAfterDeletingOneElementTest {
     }
 
     @Test
+    void shouldFindLongestSubarrayWithExactlyOne0() {
+        int[] nums = {1, 1, 0, 1, 1};
+
+        int actual = longestSubarrayOf1sAfterDeletingOneElement.longestSubarray(nums);
+
+        Assertions.assertEquals(4, actual);
+    }
+
+    @Test
     void shouldFindLongestSubarray() {
         int[] nums = {0, 1, 0, 1, 1, 0, 1};
 
