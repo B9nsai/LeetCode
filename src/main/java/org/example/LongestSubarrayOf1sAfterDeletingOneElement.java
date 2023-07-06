@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * <h1>1493. Longest Subarray of 1's After Deleting One Element</h1>
  * <p>Given a binary array nums, you should delete one element from it.</p>
@@ -13,19 +16,19 @@ package org.example;
  */
 public class LongestSubarrayOf1sAfterDeletingOneElement {
     public int longestSubarray(int[] nums) {
-        if (isOnlyTheSameNumber(nums)) {
-            return nums[0] == 1 ? nums.length - 1 : 0;
+        long count1s = count1s(nums);
+        if (count1s == 0) {
+            return 0;
+        } else if (count1s >= nums.length - 1) {
+            return nums.length - 1;
+        } else if (count1s == 0) {
+            return 0;
         }
+
         return 0;
     }
 
-    private boolean isOnlyTheSameNumber(int[] nums) {
-        int base = nums[0];
-        for (int num : nums) {
-            if (num != base) {
-                return false;
-            }
-        }
-        return true;
+    private long count1s(int[] nums) {
+        return Arrays.stream(nums).filter(num -> num == 1).count();
     }
 }
