@@ -13,6 +13,19 @@ package org.example;
  */
 public class LongestSubarrayOf1sAfterDeletingOneElement {
     public int longestSubarray(int[] nums) {
+        if (isOnlyTheSameNumber(nums)) {
+            return nums[0] == 1 ? nums.length - 1 : 0;
+        }
         return 0;
+    }
+
+    private boolean isOnlyTheSameNumber(int[] nums) {
+        int base = nums[0];
+        for (int num : nums) {
+            if (num != base) {
+                return false;
+            }
+        }
+        return true;
     }
 }
