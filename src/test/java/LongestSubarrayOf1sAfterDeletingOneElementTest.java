@@ -48,4 +48,13 @@ public class LongestSubarrayOf1sAfterDeletingOneElementTest {
 
         Assertions.assertEquals(4, actual);
     }
+
+    @Test
+    void shouldFindLongestSubarrayWithOneSubarray() {
+        int[] nums = {0,0,1,1};
+
+        int actual = longestSubarrayOf1sAfterDeletingOneElement.longestSubarray(nums);
+
+        Assertions.assertEquals(4, actual);
+    }
 }
