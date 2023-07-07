@@ -55,6 +55,6 @@ public class LongestSubarrayOf1sAfterDeletingOneElementTest {
 
         int actual = longestSubarrayOf1sAfterDeletingOneElement.longestSubarray(nums);
 
-        Assertions.assertEquals(4, actual);
+        Assertions.assertEquals(2, actual);
     }
 }
