@@ -63,6 +63,10 @@ public class LongestSubarrayOf1sAfterDeletingOneElement {
                 to = -1;
             }
         }
+        if (from != -1) {
+            subarrays.add(new Subarray(from, to, subarrays.get(subarrays.size() - 1)));
+        }
+
         return subarrays;
     }
 
