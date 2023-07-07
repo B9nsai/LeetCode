@@ -42,10 +42,10 @@ public class LongestSubarrayOf1sAfterDeletingOneElementTest {
 
     @Test
     void shouldFindLongestSubarray() {
-        int[] nums = {0, 1, 0, 1, 1, 0, 1};
+        int[] nums = {1,1,0,0,1,1,1,0,1};
 
         int actual = longestSubarrayOf1sAfterDeletingOneElement.longestSubarray(nums);
 
-        Assertions.assertEquals(3, actual);
+        Assertions.assertEquals(4, actual);
     }
 }
